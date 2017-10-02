@@ -26,8 +26,10 @@ So far, here are the general ideas i have for it:
 - a hex stops running when a next is successfully called
 - A location (L) is a 4 bit value that refers to a location (self, neighbors, global stacks A-G)
 - ACC is the local hex's accumulator
-- All processes that read from L read from the top of the stack, like a peek
+- All processes that read from L read from the top of the stack. this pops the value.
 - Io location consists of two L, for a total of 64kb of memory locations
+- [Feature?] the neighbor codes of those who called the current hex should be stored in one of the global stacks
+- all nexts should be able to accept a location for a neighbor code, which will grab the value off of the top of the stack
   * next NC
   * next if zero NC
   * next if greater than zero NC
@@ -49,3 +51,7 @@ So far, here are the general ideas i have for it:
  - build a parser for the instruction set
  - build a runner for the grid
  - add a run options panel
+
+# Open questions
+ - How do other assembly / machine languages handle by value and by reference?
+ - are there any order to opcodes? are their bin values random?
