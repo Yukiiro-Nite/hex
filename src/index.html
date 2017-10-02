@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="watchPolyfill.js"></script>
+    <script src="hexGrid.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Hex</h1>
+      <h3>A hexagonal assembly system</h3>
+    </div>
+    <div class="options-panel">
+      <input type="radio" id="editMode" name="mode" value="edit" checked/>
+      <label for="editMode">Edit</label>
+      <input type="radio" id="removeMode" name="mode" value="remove"/>
+      <label for="removeMode">Remove</label>
+      <input type="radio" id="runMode" name="mode" value="run"/>
+      <label for="runMode">Run</label>
+    </div>
+    <div>
+      <canvas id="canvas"></canvas>
+    </div>
+    <div id="modal" class="modal closed">
+      <button id="modalClose">X</button>
+      <div class="editModal">
+        <h3>Edit</h3>
+        <div>
+          <input id="bg-color" type="color" />
+          <label for="bg-color">Background Color</label>
+        </div>
+        <div>
+          <input id="fg-color" type="color" />
+          <label for="fg-color">Text Color</label>
+        </div>
+        <div>
+          <input id="border-color" type="color" />
+          <label for="border-color">Border Color</label>
+        </div>
+        <div>
+          <h4>Value:</h4>
+          <textarea id="cell-value">
+          </textarea>
+        </div>
+      </div>
+      <div class="runModal">
+        <h3>Debug</h3>
+        <div>
+          <label>Accumulator: </label>
+          <label id="accumulator-debug">0</label>
+        </div>
+        <div>
+          <label>Stack: </label>
+          <table id="stack-debug">
+          </table>
+        </div>
+      </div>
+    </div>
+    <script>
+      init();
+    </script>
+  </body>
+</html>

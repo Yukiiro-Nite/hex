@@ -1,0 +1,51 @@
+body {
+  background-color: #444;
+  color: #111;
+  font-weight: bold;
+}
+input {
+  background-color: #111111;
+  border: 1px solid black;
+}
+
+#canvas {
+  border: 1px solid #111;
+  border-radius: 5px;
+}
+
+.modal {
+  position: absolute;
+  border: 2px solid #111;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px;
+}
+
+#modalClose {
+
+}
+
+.modal.closed {
+  display: none;
+}
+
+.modal.opened {
+  display: block;
+}
+.modal .editModal, .modal .runModal {
+  display: none;
+}
+.modal.edit .editModal {
+  display: block;
+}
+
+.modal.run .runModal {
+  display: block;
+}
+
+#stack-debug {
+  display: block;
+  max-height: 200px;
+  overflow-y: scroll;
+  margin-left: 10px;
+}
