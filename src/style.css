@@ -1,10 +1,11 @@
 body {
   background-color: #444;
-  color: #111;
+  color: #fff;
   font-weight: bold;
 }
 input {
   background-color: #111111;
+  color: #fff;
   border: 1px solid black;
 }
 
@@ -48,4 +49,16 @@ input {
   max-height: 200px;
   overflow-y: scroll;
   margin-left: 10px;
+}
+
+.options {
+  padding: 10px 0;
+}
+
+.options.closed {
+  display: none;
+}
+
+.options.opened {
+  display: block;
 }

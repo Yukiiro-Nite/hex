@@ -3,6 +3,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="watchPolyfill.js"></script>
     <script src="hexGrid.js"></script>
+    <script src="runner.js"></script>
     <script src="main.js"></script>
   </head>
   <body>
@@ -17,6 +18,14 @@
       <label for="removeMode">Remove</label>
       <input type="radio" id="runMode" name="mode" value="run"/>
       <label for="runMode">Run</label>
+      <div class="mode-options">
+        <div id="runOptions" class="options closed">
+          <button id="runButton">Start</button>
+          <button id="stepButton">Step</button>
+          <label for="tpsInput">Ticks per Second:</label>
+          <input type="number" id="tpsInput"/>
+        </div>
+      </div>
     </div>
     <div>
       <canvas id="canvas"></canvas>

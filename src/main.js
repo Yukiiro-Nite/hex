@@ -2,9 +2,16 @@ let canvas, context, mode, modal, inputs, accumulatorDebug, stackDebug, hexGrid;
 
 let currentCell;
 
+const modalModes = {
+  edit: true,
+  remove: false,
+  run: true
+};
+
 function init() {
   registerElements();
   hexGrid = new HexGrid();
+  startRunner();
   // setInterval(() => {
   //   if(mode === 'run') {
   //     defaultCell.accumulator++;
@@ -57,8 +64,12 @@ function handleCanvasClick(event) {
   context.fillRect(x, y, 10, 10);
 
   currentCell = hexGrid.getCellAt(x, y);
-  modal.className = `modal opened ${mode}`;
-  modal.style = `top: ${event.pageY + 5}px; left: ${event.pageX + 5}px;`;
+  
+  if(modalModes[mode]) {
+    modal.className = `modal opened ${mode}`;
+    modal.style = `top: ${event.pageY + 5}px; left: ${event.pageX + 5}px;`;
+  }
+  
   doModeActionOnCell(currentCell);
   update();
 }

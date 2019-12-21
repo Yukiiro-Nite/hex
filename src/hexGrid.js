@@ -1,9 +1,9 @@
 // Lots of help from https://www.redblobgames.com/grids/hexagons/
 
 let defaultCell = {
-  "bg-color": "#000000",
+  "bg-color": '#444444',
   "fg-color": "#FFFFFF",
-  'border-color': "#666666",
+  'border-color': '#000000',
   'cell-value': "00",
   accumulator: 0,
   stack: []
